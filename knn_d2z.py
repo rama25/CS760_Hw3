@@ -3,7 +3,7 @@ import numpy as np
 from sklearn.neighbors import KNeighborsClassifier as knn
 import matplotlib.pyplot as plt
 
-data = pd.read_csv("homework3/data/D2z.txt", sep=" ", header=None, names=["x1", "x2", "y"])
+data = pd.read_csv("D2z.txt", sep=" ", header=None, names=["x1", "x2", "y"])
 
 X_train = data.iloc[:, 0:2]
 y_train = data.y
@@ -17,7 +17,7 @@ x1_test = [i[0] for i in test_points]
 x2_test = [i[1] for i in test_points]
 plt.scatter(x1_test, x2_test, c=test_predictions, s=3)
 plt.scatter(X_train.x1, X_train.x2, c=y_train, marker="*")
-plt.savefig("homework3/figs/knn_d2z_plot.png")
+plt.savefig("figs/knn_d2z_plot.png")
 
 if __name__ == '__main__':
     pass
