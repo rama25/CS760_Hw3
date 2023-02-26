@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.neighbors import KNeighborsClassifier as knn
 from sklearn.metrics import confusion_matrix, log_loss, roc_curve
 
-data = pd.read_csv("homework3/data/emails.csv")
+data = pd.read_csv("emails.csv")
 X = data.iloc[:, 1:3001]
 y = data.Prediction
 
@@ -86,7 +86,7 @@ if __name__ == '__main__':
     plt.title("kNN 5-Fold CV")
     plt.xlabel("k")
     plt.ylabel("Average Accuracy")
-    plt.savefig("homework3/figs/kNN_CV")
+    plt.savefig("figs/kNN_CV")
 
     X_train = X.iloc[0:4000, ]
     y_train = y.iloc[0:4000, ]
@@ -104,7 +104,7 @@ if __name__ == '__main__':
     plt.plot(fpr_log_reg, tpr_log_reg)
     plt.xlabel("False Positive Rate")
     plt.ylabel("True Positive Rate")
-    plt.savefig("homework3/figs/spam_roc.png")
+    plt.savefig("figs/spam_roc.png")
     
     pass
 
